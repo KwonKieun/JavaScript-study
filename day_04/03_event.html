@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{height: 80vh; background-color: red;}  /*vh: 브라우저 전체 높이 100vh: 꽉참*/
+    </style>
+</head>
+<body>
+    <div></div>
+    <a href='#' id='link'> 클릭 </a>  <!-- href: 주소 입력 속성, #: null링크 -->
+
+    <input type="checkbox" id='apple'><label for="apple">사과</label>
+    <script>
+        const link = document.querySelector('#link');
+        link.addEventListener('click', e => {
+            console.log('link check');
+            e.preventDefault(); // 대상이 가지고 있는 기본값 방지
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src='img/mario/icon03.png' alt='마리오' id='img' class='imgboxbox' data-num='0' data-name='img1'>
+    <script>
+        const img = document.querySelector('#img');
+        const altTxt = img.getAttribute('alt');
+        const imgCng = img.setAttribute('src', 'img/mario/icon01.png')
+        const databox = img.getAttribute('data-num');
+        const databox2 = img.dataset.name;
+        console.log(altTxt);
+        console.log(databox);
+        console.log(databox2);
+        // getAttribute('해당속성명') // 해당속성의 현재 값을 말함
+        // setAttribute('해당속성명', '새 값') 해당속성의 현재값을 새 값으로 다시 지정
+    </script>
+</body>
+</html>
