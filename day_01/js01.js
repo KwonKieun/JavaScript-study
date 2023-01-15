@@ -55,6 +55,4 @@ console.log(value3); // 100
 value3 %= 10;
 console.log(value3); // 0
 
-// 비교연산자
-
 
