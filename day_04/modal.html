@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url(css/reset.css);
+
+        #imgwrap{width: 600px;margin: 100px auto}
+        .imgbox{display: flex;}
+        .imgbox img{width:200px;}
+        #modal_bg{position: fixed;left:0;top:0;width:100%;height: 100%;
+        background: rgba(0,0,0,0.6);display: none}
+        #modal_center{width:580px;height: 380px;border:5px solid #fff;
+        position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);}
+        #modal_center img{width: 100%;}
+        
+    </style>
+   
+</head>
+<body>
+   <div id="imgwrap">
+        <ul class="imgbox">
+            <li><img src="img/gallery/01_img.jpg" class='imgsrc'></li>
+            <li><img src="img/gallery/02_img.jpg" class='imgsrc'></li>
+            <li><img src="img/gallery/03_img.jpg" class='imgsrc'></li>
+        </ul>
+    </div>
+    <!--모달창 시작 -->
+    <div id="modal_bg">
+        <div id="modal_center">
+            <button id="closeBtn">닫기</button>
+            <img src="img/gallery/01_img.jpg" id='cngImg'>
+        </div>
+    </div>
+    <!--모달창 끝 -->
+</body>
+
+<script>
+    const modal = document.querySelector('#modal_bg'); //dimm 모달창 
+    const cngImg = document.querySelector('#cngImg'); // 모달창 안의 이미지 
+    const imgbox = document.querySelector('.imgbox'); // ul 
+    const imglist  = document.querySelectorAll('.imgbox>li') // ul.imgbox > li 
+    const closeBtn  = document.querySelector('#closeBtn') // 닫기버튼
+    const body  = document.querySelector('body') //body
+   //이미지 리스트를 클릭 할때 
+    imgbox.addEventListener('click',(e) => {
+        const selected=e.target; 
+        let imgSrc = selected.getAttribute('src'); //클릭한 이미지의 src가져오기 
+        cngImg.setAttribute('src',imgSrc); //변수에 저장된 src 값을 모달창의 큰 이미지 src로 지정 
+        modal.style.display = 'block' ;  // 모달창의 css 값을 block 바꿔서 모달창이 열리게 한다. 
+    })
+
+    //닫기버튼 클릭으로 닫기 
+    closeBtn.addEventListener('click',() =>{
+        modal.style.display = "none" ; 
+    })
+
+    body.addEventListener('click',(e)=>{
+        const clickSelect =  e.target;
+        let state = window.getComputedStyle(clickSelect).display ;  
+        console.log(`${clickSelect} : ${state}`)
+        if(state === 'block' && !(clickSelect.closest('#modal_center'))){
+            modal.style.display='none' 
+        }
+    })
+
+//    Element.closest() 바로 위 부모 선택
+//    https://developer.mozilla.org/ko/docs/Web/API/Element/closest
+/* 
+    modal.addEventListener('click',() =>{
+        modal.style.display = "none" ; 
+    })
+*/
+
+
+</script>
+</html>
+
