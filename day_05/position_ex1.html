@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     /* 
+      static 기본 흐름 
+      fixed 브라우저 기준으로 위치를 맞춘다. 
+      absolute 나보다 상위 요소 (포지션 값을 가진 상위요소 0,0)를 기준으로 위치 설정 
+      relative  현재위치를 기준으로 움직인다.(현재위치0,0)
+      sticky 특정위치에서 고정 
+     */
+     p{position: fixed;bottom: 50px;right:200px}
+     h1{position: relative;left:100px;top:50px}
+
+    </style>
+</head>
+<body>
+    <h1>제목용 태그</h1>
+    <p>문단용 태그</p>
+    <div>영역을 그룹핑 하는 태그1</div>
+    <div>영역을 그룹핑 하는 태그2</div>
+    <div>영역을 그룹핑 하는 태그3</div>
+    <div>영역을 그룹핑 하는 태그4</div>
+</body>
+</html>
