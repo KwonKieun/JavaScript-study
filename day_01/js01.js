@@ -55,4 +55,28 @@ console.log(value3); // 100
 value3 %= 10;
 console.log(value3); // 0
 
+let value4=10; //Number
+let value5='10'; // String 
+let value6 = value4 === value5
+console.log(value6);
 
+let value7 = value4 !== value5;
+console.log(value7);
+
+let v1=10 , v2=20,v3=30 ,v4=40, result;
+result = !(v1>v2) ;
+console.log(!!v1);
+console.clear()
+result = v1<=v2 || v2>=v3 || v3<=v4;
+console.log(result);
+
+//증감연산자  ++ -- 
+/*let value8 = 10;
+ console.log(++value8) //11
+console.log(++value8) //12
+console.log(--value8) //11
+console.log('-----------------------') //11
+console.log(value8++) //11 -> 12 
+console.log(value8++) //12 -> 13 
+console.log(value8) //13
+console.clear() */
