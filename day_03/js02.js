@@ -15,7 +15,6 @@ console.log(Math.random()); // 랜덤
 console.log(Math.round(Math.random()*100)); // 0~100 사이 무작위 수 (난수)
 
 // random 이용해서 5자리 인증번호 출력
-
 let pass = ""; // 빈 문자열
 for (let i=1; i<6; i++){
     pass += (Math.floor(Math.random() * 10));
