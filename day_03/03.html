@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(css/reset.css);
+        #logo{width: 242px; height: 130px; margin: 50px auto; cursor: pointer }
+        #list{width:900px; height: 230px; margin: 50px auto; display: flex; }
+        #list li{justify-content: center; align-items: center; width : 150px; height: 230px; cursor: pointer; opacity: 0.5;}
+        #list li.on{opacity: 1; }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1 id="logo"><img src='img/coco_logo.png'></h1>
+        <ul id="list">
+            <!-- li[class="list"]*5{$} -->
+            <li class="list"><img src='img/image_01.png'></li>
+            <li class="list"><img src='img/image_02.png'></li>
+            <li class="list"><img src='img/image_03.png'></li>
+            <li class="list"><img src='img/image_04.png'></li>
+            <li class="list"><img src='img/image_05.png'></li>
+            <li class="list"><img src='img/image_06.png'></li>
+        </ul>
+    </div>
+    
+    
+    <script>
+        const list = document.querySelectorAll('.list');
+        const logo=document.querySelector('#logo');
+        //콜백으로 호출할 함수
+        const eventFnc = ()=> console.log('클릭 !!!');
+        logo.addEventListener('click', eventFnc)
+        list.forEach((li)=>{
+            li.addEventListener('click', ()=>li.classList.toggle('on'))
+        })
+
+    </script>
+</body>
+</html>
