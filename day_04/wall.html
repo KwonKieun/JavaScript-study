@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    @import url(css/reset.css);
+      #wall{width: 800px;height: 600px;margin: 100px auto;background: url(img/paper/b01.png);position: relative}
+
+      h1{position: absolute;left:620px;top:80px;width: 120px;text-align: center}
+      .list{position: absolute;left:0;bottom:0;width: 100%;height: 100px;border-top:1px solid #666;background: rgba(0,0,0,0.65);display: flex;}
+
+      .list li{width: 70px;height: 70px;margin-left: 10px;margin-top: 10px;border:5px solid #666;border-radius:10px;cursor: pointer}
+      .list li.on{border-color:#8dff07}
+      .list li img{width: 100%;pointer-events: none;}
+    
+    </style>
+   
+</head>
+<body>
+<div id="wall">
+  <h1>select paper</h1>
+  <img src="img/paper/cover.png" alt="">  
+  <ul class="list">
+      <li class="on"><img src="img/paper/b01.png" alt="배"></li>
+      <li><img src="img/paper/b02.png" alt="체크"></li>
+      <li><img src="img/paper/b03.png" alt="대나무"></li>
+      <li><img src="img/paper/b04.png" alt="연필"></li>
+      <li><img src="img/paper/b05.png" alt="잎"></li>
+      <li><img src="img/paper/b06.png" alt="나무숲"></li>
+  </ul>
+</div>
+<script>
+  const wall = document.querySelector('#wall') ; 
+  const paperBox = document.querySelector('.list');
+  const paperList = document.querySelectorAll('.list>li');
+  const title =  document.querySelector('h1');
+
+  paperBox.addEventListener('click',(e) => {
+    const selectPaper = e.target ; 
+    tabTitle(selectPaper)
+    tabContent(selectPaper)
+  })
+  //탭선택부분 
+  const tabTitle = (selectPaper) => {
+    paperList.forEach(ele=>{
+      ele.classList.remove('on');
+    })
+    selectPaper.classList.add('on');
+  }
+  //탭컨텐츠 
+  const tabContent = (selectPaper) => { 
+    let src = selectPaper.childNodes[0].getAttribute('src');
+    let titleTxt  = selectPaper.childNodes[0].getAttribute('alt');
+    console.log(`${src} : ${titleTxt}`)
+    title.innerText = titleTxt;
+    wall.style.backgroundImage = `url(${src})` ; 
+  }
+    
+//getAttribute('태그속성명') 
+//innerText
+//classList.add('클래스명') classList.remove('클래스명')
+//firstChild , lastChild , childNodes[0]
+</script>
+
+    
+</body>
+</html>
