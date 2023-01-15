@@ -9,7 +9,6 @@
 })()
 
 
-//
 // fnc1()
 // console.log(fnc3);
 
@@ -22,4 +21,3 @@ let fnc3 = () => {
 const fnc4 = () => {
     console.log('const 실행')
 }
-

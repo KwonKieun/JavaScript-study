@@ -2,6 +2,7 @@ const hello = function(){
     console.log('hello')
 }
 hello();
+
 //ES6 표기
 const goodbye = () => {
     console.log(`hi`)
