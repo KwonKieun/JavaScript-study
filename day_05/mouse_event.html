@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+      const body = document.querySelector('body');
+      const box = document.querySelector('#box');
+
+      document.addEventListener('mousemove',(e) =>{
+        let mouseX=e.pageX;
+        let mouseY=e.pageY;
+        box.innerText = `마우스의 x 좌표는 : ${mouseX} 마우스의 y 좌표는 :  ${mouseY}`
+        if(mouseX < 800) {
+          body.style.backgroundColor="red"
+        }else if (mouseX >=800) {
+          body.style.backgroundColor="green"
+        }
+      })
+
+  </script>
+</body>
+</html>
+
