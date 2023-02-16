@@ -1,0 +1,13 @@
+newscatcher 1
+cU9XoVfFwStAfmQzv9a4xfFMx6J6pwpXnYAE0lGUKEA
+
+newscatcher 2
+wwma-HhsionHAtTP8_6184i1UdXbgXBpPpkqYTN9XIs
+
+
+youtube apikey
+AIzaSyAZySKlIuqijcQQNDoebXgY1Rj_jaNRi6s
+
+openWeather api
+bc1099ec6f15531b5b4dbf335d4113e1
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
