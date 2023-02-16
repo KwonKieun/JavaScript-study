@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url(css/reset.css);
+        #outer{width: 400px;height: 400px;background: #f00;margin: 100px auto;position: relative;}
+        #inner{width: 200px;height: 200px;background: #000;position: absolute;top:150px;left:100px}
+        
+    </style>
+  
+</head>
+<body>
+    <div style='height:1500px; background-color: yellow;'></div>
+    <div id="outer">
+        <div id="inner"></div>
+    </div> 
+    <script>
+        const inner = document.querySelector('#inner');
+        const outer = document.querySelector('#outer');
+        const posTop = inner.getBoundingClientRect().top;  // 뷰포트를 기준으로
+        const posLeft = inner.getBoundingClientRect().left;
+        const offsetTop = inner.offsetTop;  // css 포지션 정책대로 top, left 위치 값 받아옴
+        const offsetLeft = inner.offsetLeft;
+        console.log(posTop);
+        console.log(posLeft);
+        console.log(offsetTop);  
+        console.log(offsetLeft);
+
+        const scrollValue1 = parseInt(window.pageYOffset) ; // 정수
+        const scrollValue2 = window.scrollY ; //소수점 2자리까지
+        const scrollValue3 = scrollValue2.toFixed(2) ;
+        console.log(scrollValue1);
+        console.log(scrollValue3);
+
+        function getPosTop(ele){
+            return window.scrollY + ele.getBoundingClientRect().top;
+        }
+
+        const posCalc1 = getPosTop(inner);
+        const posCalc2 = getPosTop(outer);
+
+        console.log(posCalc1);
+        console.log(posCalc2);
+        
+
+    </script>
+
+    <!-- 
+        대상요소.getBoundingClientRect().top             뷰포트 위에서부터 대상요소의 상단까지의 값
+        대상요소.getBoundingClientRect().bottom          뷰포트 위에서부터 대상요소의 하단까지의 값
+        대상요소.getBoundingClientRect().left            뷰포트 위에서부터 대상요소의 왼쪽까지의 값
+        대상요소.getBoundingClientRect().right           뷰포트 위에서부터 대상요소의 오른쪽까지의 값
+
+        대상요소.offsetTop          css 포지션 정책대로 top 위치 값
+        대상요소.offsetLeft         css 포지션 정책대로 left 위치 값
+
+        window.scrollY             페이지의 세로 스크롤 값 (explorer 지원 안됨)
+        window.pageYOffset         페이지의 세로 스크롤 값 (explorer 지원 됨)
+
+        해당 엘리민터의 상단 절대 좌표 구하기
+        window.scrollY + element.getBoundingClientRect().top;
+        window.pageYOffset + element.getBoundingClientRect().top;
+
+        scrollTo(x좌표, y좌표)     특정위치로 스크롤 시켜주는 함수
+
+     -->
+</body>
+</html>
+
+
+
