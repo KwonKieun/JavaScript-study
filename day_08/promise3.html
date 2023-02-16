@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{border: 5px solid #000; min-width: 700px}
+        .one{width: 600px; height: 100px; border: 1px solid red; margin: 10px}
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        const box = document.querySelector('.box');
+        const fnc = () => {
+            return new Promise((resolve, reject) => {
+                resolve();
+            })
+        }
+        // 요소 생성
+        const mkElement = (num) => {
+            let mkDiv = document.createElement('div');
+            mkDiv.setAttribute('class', 'one');
+            mkDiv.innerText=num;
+            box.append(mkDiv);  // append: box의 자식요소에 mkDiv 붙임
+        }
+
+        fnc()
+        .then(()=>{mkElement('1')})     // resolve
+        .then(()=>{mkElement('2')})
+        .then(()=>{mkElement('3')})
+        .catch((error)=>{               // reject
+            console.log('틀림')
+        })
+    </script>
+</body>
+</html>
+
