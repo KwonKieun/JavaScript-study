@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="stylesheet" href="youtube_ex.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <section class="search-field">
+                <div class="head-line">
+                    <img src="img/youtubelogo.jpg" alt="">
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="검색어를 입력하세요" id="search">
+                    <button id="searchBtn">검색</button>
+                </div>
+            </section>
+            <ul class="category" id="category-list">
+                <li data-topic="음악">음악</li>
+                <li data-topic="게임">게임</li>
+                <li data-topic="스포츠">스포츠</li>
+                <li data-topic="뉴스">뉴스</li>
+                <li data-topic="요리">요리</li>
+                <li data-topic="연예">연예</li>
+                <li data-topic="영화">영화</li>
+                <li data-topic="동물">동물</li>
+            </ul>
+        </header>
+        <section class="video-list">
+            <div class="video-item">
+                <div class="thum-img">
+                    <img src="" alt="">
+                </div>
+                <div class="video-txt">
+                    <h2>타이틀</h2>
+                    <p>설명</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="youtube_ex.js"></script>
+</body>
